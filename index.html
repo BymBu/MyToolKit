@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyToolKit</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="./img/ico/logo.svg" alt="логотип">
+            MyToolKit
+        </div>
+        <a class="profile-wrapper" href="" data-page="profile">
+            <div class="profile">
+                <img src="./img/ico/profile_logo.svg" alt="профиль">
+                CrashSystem
+            </div>
+        </a>
+
+    </header>
+
+    <div class="app-container">
+        <!-- Боковая панель -->
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <!-- Главная -->
+                <a href="#" class="menu-left__element btn-active" data-page="home">
+                    <img src="./img/ico/home.svg" alt="Дом">
+                    <span class="menu-left__element-title">Главная</span>
+                </a>
+
+                <!-- Управление -->
+                <a href="#" class="menu-left__element" data-page="management">
+                    <img src="./img/ico/management.svg" alt="Джойстик">
+                    <span class="menu-left__element-title">Управление</span>
+                </a>
+
+                <!-- Профиль -->
+                <a href="#" class="menu-left__element" data-page="profile">
+                    <img src="./img/ico/profile.svg" alt="Лого профиль">
+                    <span class="menu-left__element-title">Профиль</span>
+                </a>
+            </div>
+
+            <!-- GitHub -->
+            <a href="https://github.com/BymBu?ysclid=mhpqp9r0o6393559216" class="github">
+                <img src="./img/ico/github.svg" alt="гитхаб">
+                <span class="github__text">GitHub</span>
+            </a>
+        </aside>
+
+        <!-- Основной контент -->
+        <main class="main-content">
+
+            <!-- Страница: Главная -->
+            <div class="page hidden" id="home-page">
+                <div class="main-info">
+                    <img class="main__icon" src="./img/ico/sun.svg" alt="солнце">
+                    <h1 class="main-info__title">Доброе утро, CrashSystem</h1>
+                    <div class="citate">
+                        <p class="citate__text">❝ Обязательно дружите с теми, кто лучше вас. Будете мучиться, но расти.
+                            ❞</p>
+                    </div>
+                    <h2 class="main-info__subtitle">Перейдем к работе?</h2>
+                </div>
+            </div>
+
+            <!-- Страница: Управление -->
+            <div class="page hidden" id="management-page">
+                <div class="management-wrapper">
+                    <div class="management__date">
+                        <img src="./img/ico/date.svg" alt="Дата">
+                        <div class="management__date-info">
+                            <h1 class="management__date-text">--:--</h1>
+                        </div>
+                    </div>
+
+                    <!-- МОДУЛИ -->
+                    <div class="managements__modules">
+
+                        <!-- ОПРОС ДНЯ -->
+                        <div class="module" data-module="survey">
+                            <div class="module-header">
+                            </div>
+                            <div class="module-content" id="module-survey"></div>
+                        </div>
+
+                        <!-- ПЛАНИРОВЩИК -->
+                        <div class="module" data-module="planner">
+                            <div class="module-header">
+                            </div>
+                            <div class="module-content" id="module-planner"></div>
+                        </div>
+
+                        <!--  -->
+                        <div class="module gift" data-module="xz">
+                            <div class="module-header">
+                            </div>
+                            <div class="module-content" id="module-xz">
+                                <h2>Скоро</h2>
+                            </div>
+                        </div>
+
+                        <!-- ПОГОДА -->
+                        <div class="module" data-module="weather">
+                            <div class="module-header">
+                            </div>
+                            <div class="module-content" id="module-weather"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Страница: Профиль -->
+            <div class="page hidden" id="profile-page">
+                <div class="profile-container">
+                    <!-- Заголовок профиля -->
+                    <div class="profile-header">
+                        <img src="./img/ico/profile_logo.svg" alt="Аватар" class="profile-avatar">
+                        <h1 class="profile-title">Профиль</h1>
+                    </div>
+
+                    <!-- Информация -->
+                    <div class="profile-info">
+                        <div class="profile-field">
+                            <label class="profile-label">Имя</label>
+                            <p class="profile-value">CrashSystem</p>
+                        </div>
+
+                        <div class="profile-field">
+                            <label class="profile-label">Описание</label>
+                            <div class="profile-description">
+                                Участвуем в конкурсе открытых IT проектов от СибГУТИ!
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+
+    
+</body>
+
+
+<script src="./script.js"></script>
+
+<!-- Подключение модулей -->
+<script src="./modules/survey/survey.js"></script>
+<script src="./modules/planner/planner.js"></script>
+<script src="./modules/weather/weather.js"></script>
+
+<script>
+    function loadManagementModules() {
+        setTimeout(() => { 
+            DailySurvey.mount('module-survey');
+            Planner.mount('module-planner');
+            Weather.mount('module-weather');
+        }, 100);
+    }
+
+</script>
+
+
+
+</html>
