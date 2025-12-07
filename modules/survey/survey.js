@@ -6,7 +6,7 @@ window.DailySurvey = {
 
         // HTML нового опроса
         container.innerHTML = `
-            <h3 style="margin:0 0 16px; color:#247afa; font-size:1.1rem;">Опрос дня</h3>
+            <h3 style="margin:0 0 16px; color:#247afa; font-size:1.1rem;">Викторина дня</h3>
             
             <div class="progress-container">
                 <div class="progress-bar"></div>
@@ -14,76 +14,85 @@ window.DailySurvey = {
 
             <form class="ds-form">
                 <fieldset>
-                    <legend><strong>Какой тип проектов тебе интереснее?</strong></legend>
+                    <legend><strong>Какой напиток ты выбираешь утром?</strong></legend>
                     <div class="radio-option">
-                        <input type="radio" id="proj-open" name="project-type" value="open" required>
-                        <label for="proj-open">Open-source (открытый код)</label>
+                        <input type="radio" id="drink-coffee" name="drink" value="coffee" required>
+                        <label for="drink-coffee">Кофе</label>
                     </div>
                     <div class="radio-option">
-                        <input type="radio" id="proj-close" name="project-type" value="closed">
-                        <label for="proj-close">Проприетарные (закрытые)</label>
+                        <input type="radio" id="drink-tea" name="drink" value="tea">
+                        <label for="drink-tea">Чай</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="drink-juice" name="drink" value="juice">
+                        <label for="drink-juice">Сок</label>
                     </div>
                 </fieldset>
 
                 <fieldset>
-                    <legend><strong>Что для тебя важнее в IT-проекте?</strong></legend>
+                    <legend><strong>Какая еда — твой идеальный ужин?</strong></legend>
                     <div class="radio-option">
-                        <input type="radio" id="val-learning" name="value" value="learning" required>
-                        <label for="val-learning">Обучение и рост</label>
+                        <input type="radio" id="food-pasta" name="food" value="pasta" required>
+                        <label for="food-pasta">Паста</label>
                     </div>
                     <div class="radio-option">
-                        <input type="radio" id="val-money" name="value" value="money">
-                        <label for="val-money">Доход и коммерция</label>
+                        <input type="radio" id="food-burger" name="food" value="burger">
+                        <label for="food-burger">Буузы</label>
                     </div>
                     <div class="radio-option">
-                        <input type="radio" id="val-impact" name="value" value="impact">
-                        <label for="val-impact">Влияние на сообщество</label>
+                        <input type="radio" id="food-soup" name="food" value="soup">
+                        <label for="food-soup">Бухлёр</label>
                     </div>
                 </fieldset>
 
-<fieldset>
-    <legend><strong>Участвуешь ли в open-source?</strong></legend>
-    <div class="radio-option">
-        <input type="radio" id="oss-yes" name="oss" value="yes" required>
-        <label for="oss-yes">Да, активно</label>
-    </div>
-    <div class="radio-option">
-        <input type="radio" id="oss-sometimes" name="oss" value="sometimes">
-        <label for="oss-sometimes">Иногда</label>
-    </div>
-    <div class="radio-option">
-        <input type="radio" id="oss-no" name="oss" value="no">
-        <label for="oss-no">Пока нет, но хочу</label>
-    </div>
-</fieldset>
+                <fieldset>
+                    <legend><strong>Любишь ли ты дождь?</strong></legend>
+                    <div class="radio-option">
+                        <input type="radio" id="rain-love" name="rain" value="love" required>
+                        <label for="rain-love">Да, он уютный</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="rain-hate" name="rain" value="hate">
+                        <label for="rain-hate">Нет, только солнце!</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="rain-ok" name="rain" value="ok">
+                        <label for="rain-ok">Неважно, главное — зонт</label>
+                    </div>
+                </fieldset>
 
-
-<fieldset>
-    <legend><strong>Живешь в Улан-Удэ?</strong></legend>
-    <div class="radio-option">
-        <input type="radio" id="city-yes" name="city" value="yes" required>
-        <label for="city-yes">Да</label>
-    </div>
-    <div class="radio-option">
-        <input type="radio" id="city-sometimes" name="city" value="no">
-        <label for="city-sometimes">Нет</label>
-    </div>
-</fieldset>
-
-
+                <fieldset>
+                    <legend><strong>Какой сезон твой любимый?</strong></legend>
+                    <div class="radio-option">
+                        <input type="radio" id="season-summer" name="season" value="summer" required>
+                        <label for="season-summer">Лето</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="season-winter" name="season" value="winter">
+                        <label for="season-winter">Зима</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="season-spring" name="season" value="spring">
+                        <label for="season-spring">Весна</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="season-osen" name="season" value="osen">
+                        <label for="season-osen">Осень</label>
+                    </div>
+                </fieldset>
 
                 <div class="radio-option">
                     <input type="checkbox" id="agree-share" name="agree" value="yes" required>
-                    <label for="agree-share">Я согласен(а), что CrashSystem - победители*</label>
+                    <label for="agree-share">Я согласен(а) на обработку персональных данных*</label>
                 </div>
 
                 <button type="submit">Отправить ответ</button>
             </form>
-
         `;
 
         const style = document.createElement('style');
         style.textContent = `
+
             .progress-container {
                 width: 100%;
                 height: 8px;
@@ -118,11 +127,16 @@ window.DailySurvey = {
                 color: #3A3A3A;
                 font-weight: 500;
             }
-            .radio-option {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                margin-left: 10px;
+           .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-left: 10px;
+            margin-bottom: 5px;
+            }
+
+            .radio-option:last-child {
+            margin-bottom: 0;
             }
             .radio-option input[type="radio"],
             .radio-option input[type="checkbox"] {
@@ -188,7 +202,6 @@ window.DailySurvey = {
 
             const percent = Math.min((filled / total) * 100, 100);
             progressBar.style.width = `${percent}%`;
-
         }
 
         // События
@@ -196,7 +209,7 @@ window.DailySurvey = {
         form.addEventListener('change', updateProgress);
         form.addEventListener('submit', e => {
             e.preventDefault();
-            alert('Спасибо за участие в опросе!');
+            alert('Спасибо за участие в викторине!');
         });
 
         // Инициализация прогресса

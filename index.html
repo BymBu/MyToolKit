@@ -96,12 +96,11 @@
                             <div class="module-content" id="module-planner"></div>
                         </div>
 
-                        <!--  -->
-                        <div class="module gift" data-module="xz">
+                        <!-- Ввалюта -->
+                        <div class="module" data-module="money">
                             <div class="module-header">
                             </div>
-                            <div class="module-content" id="module-xz">
-                                <h2>Скоро</h2>
+                            <div class="module-content" id="module-money">
                             </div>
                         </div>
 
@@ -157,6 +156,7 @@
 <script src="./modules/survey/survey.js"></script>
 <script src="./modules/planner/planner.js"></script>
 <script src="./modules/weather/weather.js"></script>
+<script src="./modules/money/money.js"></script>
 
 <script>
     function loadManagementModules() {
@@ -164,6 +164,7 @@
             DailySurvey.mount('module-survey');
             Planner.mount('module-planner');
             Weather.mount('module-weather');
+            Fluctuating.mount('module-money')
         }, 100);
     }
 
